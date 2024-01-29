@@ -14,4 +14,5 @@ jobs:
         with:
           node-verion: "20"
       - run: npm run install-client
+      - run: npm run install-server
       - run: npm run build --prefix client
