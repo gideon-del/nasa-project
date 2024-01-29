@@ -13,5 +13,5 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-verion: "20"
-      - run: npm install-client
+      - run: npm run install-client
       - run: npm run build --prefix client
