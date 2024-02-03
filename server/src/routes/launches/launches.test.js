@@ -1,11 +1,13 @@
 const request = require("supertest");
 const app = require("../../app");
 const { mongoConnect, mongoDisconnect } = require("../../services/mongo");
+const { loadPlanets } = require("../../models/planets.model");
 describe("Launches API", () => {
   beforeAll(async () => {
     await mongoConnect();
+    await loadPlanets();
   });
-  
+
   describe("Test GET /launches", () => {
     test("It should respond with 200 sucsess", async () => {
       const response = await request(app)
